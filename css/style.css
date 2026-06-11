@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+
+/* LOADER FUTURISTA */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#050505;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+}
+
+.loader-content{
+text-align:center;
+}
+
+.loader-content h1{
+font-family:'Orbitron',sans-serif;
+font-size:45px;
+letter-spacing:5px;
+animation:neonText 2s infinite;
+}
+
+.loader-content h2{
+font-family:'Orbitron',sans-serif;
+font-size:80px;
+margin-top:15px;
+animation:neonText 2s infinite;
+}
+
+.loader-content p{
+margin-top:20px;
+font-size:18px;
+}
+
+.loading-bar{
+width:350px;
+height:8px;
+background:#111;
+margin:30px auto;
+border-radius:50px;
+overflow:hidden;
+}
+
+.loading-bar span{
+display:block;
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#00aaff,#ff003c);
+animation:loadBar 5s linear forwards;
+}
+
+@keyframes loadBar{
+0%{width:0%;}
+100%{width:100%;}
+}
+
+@keyframes neonText{
+
+0%{
+color:#00aaff;
+text-shadow:
+0 0 10px #00aaff,
+0 0 20px #00aaff,
+0 0 40px #00aaff;
+}
+
+50%{
+color:#ff003c;
+text-shadow:
+0 0 10px #ff003c,
+0 0 20px #ff003c,
+0 0 40px #ff003c;
+}
+
+100%{
+color:#00aaff;
+text-shadow:
+0 0 10px #00aaff,
+0 0 20px #00aaff,
+0 0 40px #00aaff;
+}
+
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 70px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-container img{
+height:60px;
+}
+
+.logo-container h2{
+font-family:'Orbitron',sans-serif;
+color:#ff003c;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff003c;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url("../img/zeus.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:1000px;
+}
+
+.hero-content h1{
+font-family:'Orbitron',sans-serif;
+font-size:90px;
+font-weight:900;
+animation:titleGlow 4s infinite alternate;
+}
+
+@keyframes titleGlow{
+
+0%{
+color:#00aaff;
+text-shadow:
+0 0 10px #00aaff,
+0 0 20px #00aaff,
+0 0 50px #00aaff;
+}
+
+100%{
+color:#ff003c;
+text-shadow:
+0 0 10px #ff003c,
+0 0 20px #ff003c,
+0 0 50px #ff003c;
+}
+
+}
+
+.hero-content p{
+font-size:25px;
+margin-top:20px;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+background:#ff003c;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+box-shadow:0 0 20px #ff003c;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:
+0 0 20px #ff003c,
+0 0 40px #ff003c,
+0 0 60px #ff003c;
+}
+
+.btn-secondary{
+background:#00aaff;
+box-shadow:0 0 20px #00aaff;
+}
+
+/* SECCIONES */
+
+section{
+padding:120px 10%;
+}
+
+.section-title{
+font-family:'Orbitron',sans-serif;
+font-size:50px;
+text-align:center;
+margin-bottom:50px;
+color:#ff003c;
+}
+
+/* ABOUT */
+
+.about{
+max-width:1000px;
+margin:auto;
+text-align:center;
+line-height:1.9;
+font-size:18px;
+}
+
+/* TARJETAS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+padding:30px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+border-color:#ff003c;
+box-shadow:0 0 25px rgba(255,0,60,.4);
+}
+
+.card h3{
+color:#ff003c;
+margin-bottom:15px;
+}
+
+/* ESTADISTICAS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.stat{
+background:#111;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.stat h2{
+font-size:55px;
+color:#ff003c;
+margin-bottom:10px;
+}
+
+/* PROYECTO */
+
+.project{
+text-align:center;
+}
+
+.project img{
+width:100%;
+max-width:950px;
+border-radius:25px;
+margin-bottom:30px;
+box-shadow:0 0 35px rgba(255,0,60,.3);
+}
+
+.project h3{
+font-size:40px;
+margin-bottom:20px;
+color:#ff003c;
+}
+
+.project p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+}
+
+.benefits{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.benefit{
+background:#111;
+padding:20px;
+border-radius:15px;
+font-weight:600;
+}
+
+/* CONTACTO */
+
+.contact{
+text-align:center;
+}
+
+.contact h3{
+font-size:35px;
+margin-bottom:20px;
+color:#ff003c;
+}
+
+.contact p{
+font-size:20px;
+margin-bottom:12px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0a0a0a;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+header{
+padding:15px 20px;
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+.hero-content h1{
+font-size:50px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.loader-content h2{
+font-size:45px;
+}
+
+.section-title{
+font-size:35px;
+}
+
+.encuesta{
+    text-align:center;
+    padding:40px 20px;
+    background:#0f172a;
+    color:white;
+    border-radius:15px;
+}
+
+.pregunta button{
+    margin:10px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+.pregunta button:hover {
+    transform: scale(1.05);
+}
+/* =======================================
+PREGUNTA FINAL HYPERION
+======================================= */
+
+.final-question{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+url("../img/zeus.jpg");
+background-size:cover;
+background-position:center;
+}
+
+.question-box{
+max-width:1000px;
+}
+
+.question-title{
+font-family:'Orbitron',sans-serif;
+font-size:65px;
+font-weight:900;
+margin-bottom:30px;
+animation:questionGlow 4s infinite;
+}
+
+@keyframes questionGlow{
+
+0%{
+color:#00aaff;
+text-shadow:
+0 0 10px #00aaff,
+0 0 20px #00aaff,
+0 0 40px #00aaff;
+}
+
+50%{
+color:#ff003c;
+text-shadow:
+0 0 10px #ff003c,
+0 0 20px #ff003c,
+0 0 40px #ff003c;
+}
+
+100%{
+color:#00aaff;
+text-shadow:
+0 0 10px #00aaff,
+0 0 20px #00aaff,
+0 0 40px #00aaff;
+}
+
+}
+
+.question-box p{
+font-size:22px;
+line-height:1.8;
+max-width:900px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.question-buttons{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.yes-btn{
+padding:18px 45px;
+background:#ff003c;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+box-shadow:0 0 20px #ff003c;
+transition:.4s;
+}
+
+.yes-btn:hover{
+transform:translateY(-5px);
+box-shadow:
+0 0 20px #ff003c,
+0 0 40px #ff003c,
+0 0 60px #ff003c;
+}
+
+.no-btn{
+padding:18px 45px;
+background:#00aaff;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+box-shadow:0 0 20px #00aaff;
+transition:.4s;
+}
+
+.no-btn:hover{
+transform:translateY(-5px);
+box-shadow:
+0 0 20px #00aaff,
+0 0 40px #00aaff,
+0 0 60px #00aaff;
+}
+
+/* =======================================
+FORMULARIO
+======================================= */
+
+.form-section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 20px;
+}
+
+.form-container{
+width:100%;
+max-width:700px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:25px;
+}
+
+.form-container h1{
+font-family:'Orbitron',sans-serif;
+text-align:center;
+margin-bottom:15px;
+color:#ff003c;
+}
+
+.form-container p{
+text-align:center;
+margin-bottom:35px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+background:#111;
+color:white;
+border-radius:12px;
+font-size:16px;
+}
+
+.form-group textarea{
+resize:none;
+height:160px;
+}
+
+.submit-btn{
+width:100%;
+padding:18px;
+background:#ff003c;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:.4s;
+}
+
+.submit-btn:hover{
+box-shadow:
+0 0 20px #ff003c,
+0 0 40px #ff003c;
+}
+}
